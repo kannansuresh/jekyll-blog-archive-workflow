@@ -3,7 +3,8 @@ name: Generate Jekyll Archives
 on:
   workflow_dispatch:  
   push:
-    branches: [ master ]
+    paths:
+      - '_posts/**'
 
 jobs:
   build:

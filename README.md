@@ -1,6 +1,6 @@
 ## Jekyll Archives Workflow
 
-This workflow action helps in creating Jekyll archvies for GitHub pages.
+This workflow action helps in creating Jekyll archives for GitHub pages.
 
 ## Steps to follow
 
@@ -41,7 +41,7 @@ collections:
 ```
 5. Build your site and see if you can see the archive data by navigating to your site. `(yoursite.com/archives/archivedata)`
    
-6. You should see a `json` file similar to the below one. 
+6. You should see a `json` file like the below one. 
 ```json
 {
     "categories": [
@@ -75,7 +75,7 @@ collections:
     - `archive-tags.html`
     - `archive-years.html`
 
-> Sample layouts and files are present in the folder `blog-files` of this repository. If you are using it make sure to include file from `_includes` folder too.
+> Sample layouts and files are present in the folder `blog-files` of this repository. If you are using it make sure to include a file from `_includes` folder too.
 
 ## 2. Setup a new action
 
@@ -85,11 +85,12 @@ collections:
 4. Add the following code inside the file.
 ```yml
 name: Generate Jekyll Archives
-description: Generate categories, tags and years archive files.
+description: Generate categories, tags, and years archive files.
 on:
   workflow_dispatch:  
   push:
-    branches: [ master ]
+    paths:
+      - '_posts/**'
 
 jobs:
   build:
@@ -114,17 +115,17 @@ jobs:
         git commit -m "Created and updated archive files."
         git push origin master
 ```
-> Replace the variable `archive_url` with your sites path. This action runs everytime you push something to the `master` branch. Edit or add branches if you are working on a different branch.
+> Replace the variable `archive_url` with your site's path. This action runs every time you push something to the `_posts` folder and pushes to your `master` branch. If you want to push to another branch, change the branch in the last line.
 
-5. To trigger the action manually
+1. To trigger the action manually
    - Navigate to `Actions` tab.
    - Select `Generate Jekyll Archives`.
    - Select `Run workflow` and run it.
    - Wait for the run to complete.
-   - After successfull run, navigate to `_archives` folder and you will see the archive files generated.
+   - After a successful run, navigate to `_archives` folder and you will see the archive files generated.
 
 
-To view the archives on your site, use the following urls.
+To view the archives on your site, use the following URLs.
 - For categories: `yoursite.com/category/category_name`
 - For tags: `yoursite.com/category/tag_name`
 - For categories: `yoursite.com/category/year`
