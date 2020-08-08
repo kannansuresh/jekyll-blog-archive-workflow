@@ -14,8 +14,7 @@ archive_types = {
 
 
 def createfrontmatter(archive_s_form, archive_p_form, archive_item_value, archive_value_escaped):
-    front_matter_template = f'''
----
+    front_matter_template = f'''---
 title: {archive_item_value}
 {archive_s_form}: "{archive_item_value}"
 layout: archive-{archive_p_form}
