@@ -1,0 +1,27 @@
+name: Delete Jekyll Archives
+description: Delete the subfolders (tags, categories and years) in the archive folder.
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Delete Jekyll Archives
+      uses: kannansuresh/jekyll-blog-archive-workflow@master
+      with:
+        archive_url: 'delete_archives'
+        archive_folder_path: '_archives'
+
+    - name: setup git config
+      run: |
+            git config user.name "GitHub Actions Bot"
+            git config user.email "<>"
+
+    - name: commit
+      run: |
+        git add --all
+        git commit -m "Created and updated archive files."
+        git push origin master
