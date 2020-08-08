@@ -1,5 +1,7 @@
 FROM python:3
 
+ADD dist/_create-archive-files.py /
+
 RUN pip install -Iv requests
 
-ENTRYPOINT ["python", "/dist/_create-archive-files.py"]
+CMD ["python", "/dist/_create-archive-files.py"]
