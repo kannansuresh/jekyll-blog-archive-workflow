@@ -1,7 +1,9 @@
 name: Generate Jekyll Archives
 description: Generate categories, tags and years archive files.
 on:
-  workflow_dispatch:
+  workflow_dispatch:  
+  push:
+    branches: [ master ]
 
 jobs:
   build:
