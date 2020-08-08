@@ -39,9 +39,12 @@ collections:
 ]
 }
 ```
-5. Build your site and see if you can see the archive data by navigating to your site. `(yoursite.com/archives/archivedata)`
+
+![Archive setup](/assets/images/archive-files-setup.jpg)
+
+1. Build your site and see if you can see the archive data by navigating to your site. `(yoursite.com/archives/archivedata)`
    
-6. You should see a `json` file like the below one. 
+2. You should see a `json` file like the below one. 
 ```json
 {
     "categories": [
@@ -116,6 +119,8 @@ jobs:
         git push origin master
 ```
 > Replace the variable `archive_url` with your site's path. This action runs every time you push something to the `_posts` folder and pushes to your `master` branch. If you want to push to another branch, change the branch in the last line.
+
+![Archive files created by action](assets/images/archive-files-created-with-action.jpg)
 
 1. To trigger the action manually
    - Navigate to `Actions` tab.
