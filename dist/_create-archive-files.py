@@ -27,7 +27,7 @@ permalink: "{archive_s_form}/{archive_value_escaped}"
 if __name__ == '__main__':
     from sys import argv, stderr
     if len(argv) < 2:
-        print("Usage: {} input_dir output_dir".format(argv[0]), file=stderr)
+        print("Usage: {} archive_url archive_folder_path".format(argv[0]), file=stderr)
         exit(1)
 
     archive_data_url = argv[1]
