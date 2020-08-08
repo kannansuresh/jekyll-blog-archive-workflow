@@ -1,5 +1,5 @@
 name: Delete Archives Folder
-description: Deletes all content of the archive folder.
+# description: Deletes all content of the archive folder.
 on:
   workflow_dispatch:
 
@@ -23,5 +23,10 @@ jobs:
     - name: commit
       run: |
         git add --all
-        git commit -m "Created and updated archive files."
-        git push origin master
+        if [ -z "$(git status --porcelain)" ]; then
+           echo "::set-output name=push::false"
+        else
+           git commit -m "Deleted archives folder." -a
+           echo "::set-output name=push::true"
+           git push origin master
+        fi

@@ -1,5 +1,5 @@
 name: Generate Jekyll Archives
-description: Generate categories, tags and years archive files.
+# description: Generate categories, tags and years archive files.
 on:
   workflow_dispatch:  
   push:
@@ -25,5 +25,10 @@ jobs:
     - name: commit
       run: |
         git add --all
-        git commit -m "Created and updated archive files."
-        git push origin master
+        if [ -z "$(git status --porcelain)" ]; then
+           echo "::set-output name=push::false"
+        else
+           git commit -m "Created and updated archive files." -a
+           echo "::set-output name=push::true"
+           git push origin master
+        fi
