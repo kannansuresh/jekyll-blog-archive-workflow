@@ -40,7 +40,7 @@ collections:
 }
 ```
 
-![Archive setup](/assets/images/archive-files-setup.jpg)
+![Archive setup](https://github.com/kannansuresh/jekyll-blog-archive-workflow/blob/master/assets/images/archive-files-setup.jpg)
 
 1. Build your site and see if you can see the archive data by navigating to your site. `(yoursite.com/archives/archivedata)`
    
@@ -120,7 +120,7 @@ jobs:
 ```
 > Replace the variable `archive_url` with your site's path. This action runs every time you push something to the `_posts` folder and pushes to your `master` branch. If you want to push to another branch, change the branch in the last line.
 
-![Archive files created by action](assets/images/archive-files-created-with-action.jpg)
+![Archive files created by action](https://github.com/kannansuresh/jekyll-blog-archive-workflow/blob/master/assets/images/archive-files-created-with-action.jpg)
 
 1. To trigger the action manually
    - Navigate to `Actions` tab.
