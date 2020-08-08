@@ -2,6 +2,6 @@ FROM python:3
 
 RUN pip install -Iv requests
 
-COPY ./ /generatedocs
+COPY ./ /generatearchiviefiles
 
-ENTRYPOINT ["python", "/generatedocs/dist/_create-archive-files.py"]
+ENTRYPOINT ["python", "/generatearchiviefiles/dist/_create-archive-files.py"]
