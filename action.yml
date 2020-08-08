@@ -12,3 +12,7 @@ runs:
   image: dockerfile
   args:
     - ${{ inputs.archive_url }}
+
+branding:
+  icon: 'activity'
+  color: 'blue'
