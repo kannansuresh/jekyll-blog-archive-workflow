@@ -1,0 +1,14 @@
+name: 'Jekyll Blog Archive'
+author: 'Kannan Suresh'
+description: 'Enables archive feature to your Jekyll blog on GitHub pages'
+
+inputs:
+  archive_url:
+    description: 'Url to archive data of the blog.'
+    required: true
+
+runs:
+  using: docker
+  image: dockerfile
+  args:
+    - ${{ inputs.archive_url }}
