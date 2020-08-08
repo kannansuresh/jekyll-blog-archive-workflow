@@ -4,14 +4,11 @@ import json
 import pathlib
 import requests
 
-
-
 archive_types = {
     'year': 'years',
     'tag': 'tags',
     'category': 'categories'
 }
-
 
 def createfrontmatter(archive_s_form, archive_p_form, archive_item_value, archive_value_escaped):
     front_matter_template = f'''---
