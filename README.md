@@ -88,7 +88,7 @@ collections:
 4. Add the following code inside the file.
 ```yml
 name: Generate Jekyll Archives
-description: Generate categories, tags, and years archive files.
+# description: Generate categories, tags, and years archive files.
 on:
   workflow_dispatch:  
   push:
