@@ -1,3 +1,8 @@
+---
+title: Jekyll Archives Workflow
+description: Jekyll Archives workflow action. This action brings automated archive feature to Jekyll blogs hosted on GitHub pages.
+---
+
 ## Jekyll Archives Workflow
 
 This workflow action helps in creating Jekyll archives for GitHub pages.
