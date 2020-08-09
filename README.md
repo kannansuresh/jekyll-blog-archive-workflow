@@ -8,6 +8,7 @@ This workflow action helps in creating Jekyll archives for GitHub pages.
 
 1. Open `_config.yml` file to edit your configuration.
 2. Add a collection to the configuration like below.
+   
 ```yml
 # Archives
 collections:
@@ -15,6 +16,7 @@ collections:
     output: true
     permalink: /archives/:path/
 ```
+
 3. Create a folder `_archives` in your GitHub pages root.
 4. Create a text file `archivedata.txt` with the below code.
 
@@ -40,7 +42,7 @@ collections:
 }
 ```
 
-![Archive setup](https://github.com/kannansuresh/jekyll-blog-archive-workflow/blob/master/assets/images/archive-files-setup.jpg)
+![Archive setup](/assets/images/archive-files-setup.jpg)
 
 1. Build your site and see if you can see the archive data by navigating to your site. `(yoursite.com/archives/archivedata)`
    
@@ -71,6 +73,7 @@ collections:
     ]
 }
 ```
+
 > File was formatted for better reading. This will appear minified on your site.
 
 7. Create 3 layouts in the `_layouts` folder.
@@ -124,7 +127,9 @@ jobs:
              git push origin master
           fi
 ```
+
 ### Variables
+
 | Variable Name | Description |Required |
 |--|--|--|
 | `archive_url` | Your blog's archive data URL. e.g. `yoursite.com/archives/archivedata` | Yes |
@@ -137,7 +142,7 @@ jobs:
 > The action is set to run every time a commit happens in your `_posts` folder.
 
 
-![Archive files created by action](https://github.com/kannansuresh/jekyll-blog-archive-workflow/blob/master/assets/images/archive-files-created-with-action.jpg)
+![Archive files created by action](/assets/images/archive-files-created-with-action.jpg)
 
 1. To trigger the action manually
    - Navigate to `Actions` tab.
