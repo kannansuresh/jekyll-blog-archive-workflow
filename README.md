@@ -86,37 +86,43 @@ collections:
 2. Create a folder named `.github` and create `workflows` folder inside it if it doesn't exist.
 3. Create a new file named `add_archives.yml` in the `workflows` folder. You can name it anything you want.
 4. Add the following code inside the file.
+   
 ```yml
 name: Generate Jekyll Archives
-# description: Generate categories, tags, and years archive files.
+# description: Generate categories, tags and years archive files.
 on:
-  workflow_dispatch:  
+  workflow_dispatch:
   push:
     paths:
-      - '_posts/**'
+      - "_posts/**"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Generate Jekyll Archives
-      uses: kannansuresh/jekyll-blog-archive-workflow@master
-      with:
-        archive_url: 'https://aneejian.com/archives/archivedata'
-        archive_folder_path: '_archives'
+      - name: Generate Jekyll Archives
+        uses: kannansuresh/jekyll-blog-archive-workflow@master
+        with:
+          archive_url: "https://aneejian.com/archives/archivedata"
+          archive_folder_path: "_archives"
 
-    - name: setup git config
-      run: |
-            git config user.name "GitHub Actions Bot"
-            git config user.email "<>"
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
 
-    - name: commit
-      run: |
-        git add --all
-        git commit -m "Created and updated archive files."
-        git push origin master
+      - name: commit
+        run: |
+          git add --all
+          if [ -z "$(git status --porcelain)" ]; then
+             echo "::set-output name=push::false"
+          else
+             git commit -m "Created and updated archive files." -a
+             echo "::set-output name=push::true"
+             git push origin master
+          fi
 ```
 ### Variables
 | Variable Name | Description |Required |

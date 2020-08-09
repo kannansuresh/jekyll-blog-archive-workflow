@@ -7,26 +7,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Delete Archives Folder
-      uses: kannansuresh/jekyll-blog-archive-workflow@master
-      with:
-        archive_url: 'delete_archives_folder'
-        archive_folder_path: '_archives'
+      - name: Delete Archives Folder
+        uses: kannansuresh/jekyll-blog-archive-workflow@master
+        with:
+          archive_url: "delete_archives_folder"
+          archive_folder_path: "_archives"
 
-    - name: setup git config
-      run: |
-            git config user.name "GitHub Actions Bot"
-            git config user.email "<>"
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
 
-    - name: commit
-      run: |
-        git add --all
-        if [ -z "$(git status --porcelain)" ]; then
-           echo "::set-output name=push::false"
-        else
-           git commit -m "Deleted archives folder." -a
-           echo "::set-output name=push::true"
-           git push origin master
-        fi
+      - name: commit
+        run: |
+          git add --all
+          if [ -z "$(git status --porcelain)" ]; then
+             echo "::set-output name=push::false"
+          else
+             git commit -m "Deleted archives folder." -a
+             echo "::set-output name=push::true"
+             git push origin master
+          fi
