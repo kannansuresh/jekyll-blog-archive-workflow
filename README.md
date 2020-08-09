@@ -20,7 +20,8 @@ collections:
 3. Create a folder `_archives` in your GitHub pages root.
 4. Create a text file `archivedata.txt` with the below code.
 
-{% raw %}
+<div style="display: none;">{% raw %}</div>
+
 ```liquid
 ---
 ---
@@ -42,7 +43,7 @@ collections:
 ]
 }
 ```
-{% endraw %}
+<div style="display: none;">{% endraw %}</div>
 
 ![Archive setup](/assets/images/archive-files-setup.jpg)
 
