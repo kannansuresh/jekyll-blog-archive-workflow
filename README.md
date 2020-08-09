@@ -118,7 +118,18 @@ jobs:
         git commit -m "Created and updated archive files."
         git push origin master
 ```
-> Replace the variable `archive_url` with your site's path. This action runs every time you push something to the `_posts` folder and pushes to your `master` branch. If you want to push to another branch, change the branch in the last line.
+### Variables
+| Variable Name | Description |Required |
+|--|--|--|
+| `archive_url` | Your blog's archive data URL. e.g. `yoursite.com/archives/archivedata` | Yes |
+|`archive_folder_path`|Path to your `_archives` folder. Default value `_archives`|Yes|
+
+> In the code above, make sure to change the variable `archive_url` to your site's archive data URL.
+
+> By default, the code pushes changes to `master` branch. Change the code if you want the changes to be pushed to a different branch.
+
+> The action is set to run every time a commit happens in your `_posts` folder.
+
 
 ![Archive files created by action](https://github.com/kannansuresh/jekyll-blog-archive-workflow/blob/master/assets/images/archive-files-created-with-action.jpg)
 
@@ -132,5 +143,13 @@ jobs:
 
 To view the archives on your site, use the following URLs.
 - For categories: `yoursite.com/category/category_name`
-- For tags: `yoursite.com/category/tag_name`
-- For categories: `yoursite.com/category/year`
+- For tags: `yoursite.com/tag/tag_name`
+- For categories: `yoursite.com/year/2020`
+
+## See it in action
+I have implemented this on my website [Aneejian](https://aneejian.com)
+
+See the below URLs.
+- [https://aneejian.com/category/rpa](https://aneejian.com/category/rpa)
+- [https://aneejian.com/tag/jekyll](https://aneejian.com/tag/jekyll)
+- [https://aneejian.com/year/2020](https://aneejian.com/year/2020)
