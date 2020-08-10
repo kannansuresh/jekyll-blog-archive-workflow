@@ -1,13 +1,15 @@
-## Jekyll Archives Workflow
+![Automated Archives in GitHub pages](https://aneejian.com/assets/images/featured/jekyll-archives-workflow-featured.jpg)
 
-This workflow action helps in creating Jekyll archives for GitHub pages.
+# Jekyll Archives Workflow
 
-## Steps to follow
+This workflow action helps in automatically creating archives for GitHub pages built with Jekyll.
 
-### 1. On your Jekyll Blog
+## Blog Configuration
 
-1. Open `_config.yml` file to edit your configuration.
-2. Add a collection to the configuration like below.
+### Create a collection
+
+- Open `_config.yml` file to edit your configuration.
+- Add a collection to the configuration like below.
    
 ```yml
 # Archives
@@ -17,8 +19,12 @@ collections:
     permalink: /archives/:path/
 ```
 
-3. Create a folder `_archives` in your GitHub pages root.
-4. Create a text file `archivedata.txt` with the below code.
+___
+
+### Setup `_archives` folder
+
+- Create a folder `_archives` in your GitHub pages root.
+- Create a text file `archivedata.txt` with the below code.
 
 <!-- {% raw %} -->
 
@@ -45,11 +51,13 @@ collections:
 ```
 <!-- {% endraw %} -->
 
-![Archive setup](/assets/images/archive-files-setup.jpg)
+![_archives folder setup](https://aneejian.com/assets/images/jekyll-archives-folder-initial.svg)
 
-1. Build your site and see if you can see the archive data by navigating to your site. `(yoursite.com/archives/archivedata)`
+#### Test the setup
+
+- Build your site and see if you can see the archive data by navigating to your site. `(yoursite.com/archives/archivedata)`
    
-2. You should see a `json` file like the below one. 
+- You should see a `json` structure like the below one. 
 ```json
 {
     "categories": [
@@ -79,19 +87,27 @@ collections:
 
 > File was formatted for better reading. This will appear minified on your site.
 
-7. Create 3 layouts in the `_layouts` folder.
+### Setup `_layouts` folder
+
+- Create 3 layouts in the `_layouts` folder.
     - `archive-categories.html`
     - `archive-tags.html`
     - `archive-years.html`
 
-> Sample layouts and files are present in the folder `blog-files` of this repository. If you are using it make sure to include a file from `_includes` folder too.
+![Layouts folder setup](https://aneejian.com/assets/images/jekyll-archives-layouts-folder.svg)
+
+> Sample layouts and files are present in the folder [`blog-files`](/blog-files/_layouts) of this repository. If you are using it make sure to include a file from [`_includes`](blog-files/_includes) folder too.
+
+> Do not rename the files in the `_layouts` folder.
+
+___
 
 ## 2. Setup a new action
 
-1. Got to your blog repository.
-2. Create a folder named `.github` and create `workflows` folder inside it if it doesn't exist.
-3. Create a new file named `add_archives.yml` in the `workflows` folder. You can name it anything you want.
-4. Add the following code inside the file.
+- Got to your blog repository.
+- Create a folder named `.github` and create `workflows` folder inside it if it doesn't exist.
+- Create a new file named `add_archives.yml` in the `workflows` folder. You can name it anything you want.
+- Add the following code inside the file.
    
 ```yml
 name: Generate Jekyll Archives
@@ -108,10 +124,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Generate Jekyll Archives
-        uses: kannansuresh/jekyll-blog-archive-workflow@master
+      - name: Jekyll Blog Archive
+        uses: kannansuresh/jekyll-blog-archive-workflow@v1.0.0
         with:
-          archive_url: "https://aneejian.com/archives/archivedata"
+          archive_url: "https://yoursite.com/archives/archivedata"
           archive_folder_path: "_archives"
 
       - name: setup git config
@@ -140,9 +156,9 @@ jobs:
 > The action is set to run every time a commit happens in your `_posts` folder.
 
 
-![Archive files created by action](/assets/images/archive-files-created-with-action.jpg)
+![Archive files created by action](https://aneejian.com/assets/images/jekyll-archives-workflow-result.svg)
 
-1. To trigger the action manually
+- To trigger the action manually
    - Navigate to `Actions` tab.
    - Select `Generate Jekyll Archives`.
    - Select `Run workflow` and run it.
