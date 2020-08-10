@@ -1,4 +1,4 @@
-![Automated Archives in GitHub pages](https://aneejian.com/assets/images/featured/jekyll-archives-workflow-featured.jpg)
+![Automated Archives in GitHub pages](/assets/images/jekyll-archives-workflow-featured.jpg)
 
 # Jekyll Archives Workflow
 
@@ -51,7 +51,7 @@ ___
 ```
 <!-- {% endraw %} -->
 
-![_archives folder setup](https://aneejian.com/assets/images/jekyll-archives-folder-initial.svg)
+![_archives folder setup](/assets/images/jekyll-archives-folder-initial.svg)
 
 #### Test the setup
 
@@ -94,9 +94,9 @@ ___
     - `archive-tags.html`
     - `archive-years.html`
 
-![Layouts folder setup](https://aneejian.com/assets/images/jekyll-archives-layouts-folder.svg)
+![Layouts folder setup](/assets/images/jekyll-archives-layouts-folder.svg)
 
-> Sample layouts and files are present in the folder [`blog-files`](/blog-files/_layouts) of this repository. If you are using it make sure to include a file from [`_includes`](blog-files/_includes) folder too.
+> Sample layouts and files are present in the folder [`blog-files`](/blog-files/_layouts) of this repository. If you are using it make sure to include a file from [`_includes`](/blog-files/_includes) folder too.
 
 > Do not rename the files in the `_layouts` folder.
 
@@ -156,7 +156,7 @@ jobs:
 > The action is set to run every time a commit happens in your `_posts` folder.
 
 
-![Archive files created by action](https://aneejian.com/assets/images/jekyll-archives-workflow-result.svg)
+![Archive files created by action](/assets/images/jekyll-archives-workflow-result.svg)
 
 - To trigger the action manually
    - Navigate to `Actions` tab.
