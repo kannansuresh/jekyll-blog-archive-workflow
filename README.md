@@ -122,13 +122,8 @@ jobs:
       - name: commit
         run: |
           git add --all
-          if [ -z "$(git status --porcelain)" ]; then
-             echo "::set-output name=push::false"
-          else
-             git commit -m "Created and updated archive files." -a
-             echo "::set-output name=push::true"
-             git push origin master
-          fi
+          git commit -m "Created and updated archive files." || echo "No changes to commit."
+          git push origin master || echo "No changes to push."
 ```
 
 ### Variables
