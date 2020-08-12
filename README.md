@@ -125,7 +125,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Jekyll Blog Archive
-        uses: kannansuresh/jekyll-blog-archive-workflow@v1.0.0
+        uses: kannansuresh/jekyll-blog-archive-workflow@v1.0.3
         with:
           archive_url: "https://yoursite.com/archives/archivedata"
           archive_folder_path: "_archives"
