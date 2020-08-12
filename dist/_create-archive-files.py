@@ -100,11 +100,16 @@ if __name__ == '__main__':
                     removed_files.append(archive_type + ": " + archive_file)
 
         if len(added_files) > 0:
-            print('Added files:')
+            print('Added archive files:')
             for file_info in added_files:
                 print(file_info)
+        else:
+            print('No archive files to add.')
+
 
         if len(removed_files) > 0:
-            print('Removed files:')
+            print('Removed archive files:')
             for file_info in removed_files:
                 print(file_info)
+        else:
+            print('No archive files to remove.')
