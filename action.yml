@@ -1,6 +1,6 @@
 name: 'Jekyll Blog Archive'
 author: 'Kannan Suresh'
-description: 'Enables archive feature to your Jekyll blog on GitHub pages'
+description: 'Enables archive feature to your Jekyll blog on GitHub pages. Modified by niquapod.'
 
 inputs:
   archive_url:
