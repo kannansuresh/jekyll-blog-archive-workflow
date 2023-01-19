@@ -9,6 +9,7 @@ archive_types = {
     'year': 'years',
     'tag': 'tags',
     'category': 'categories'
+    'month' : 'months'
 }
 
 input_options = ['delete_archives', 'delete_archives_folder']
